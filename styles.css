@@ -1,0 +1,242 @@
+:root {
+  --bg-start: #f7f3e8;
+  --bg-end: #dbe8f5;
+  --panel: rgba(255, 255, 255, 0.74);
+  --panel-border: rgba(255, 255, 255, 0.65);
+  --text: #152238;
+  --muted: #435265;
+  --accent: #0f9d7f;
+  --accent-dark: #0a7e66;
+  --danger: #b64747;
+  --shadow: 0 20px 45px rgba(26, 35, 49, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background: linear-gradient(140deg, var(--bg-start), var(--bg-end));
+  overflow-x: hidden;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(15, 157, 127, 0.16), transparent 35%),
+    radial-gradient(circle at 83% 70%, rgba(255, 164, 106, 0.2), transparent 40%),
+    radial-gradient(circle at 40% 90%, rgba(56, 119, 255, 0.15), transparent 45%);
+  filter: blur(4px);
+}
+
+.app-shell {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 18px 44px;
+}
+
+.hero {
+  animation: riseIn 650ms ease;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  animation: riseIn 700ms ease;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.28rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.badge {
+  background: rgba(15, 157, 127, 0.16);
+  color: var(--accent-dark);
+  border: 1px solid rgba(15, 157, 127, 0.25);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  padding: 4px 10px;
+  font-weight: 700;
+}
+
+.composer {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid rgba(42, 64, 85, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(15, 157, 127, 0.5);
+  box-shadow: 0 0 0 3px rgba(15, 157, 127, 0.16);
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(140deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  border: 1px solid rgba(42, 64, 85, 0.17);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.note-item h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.note-item p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.todo-item label {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: var(--accent);
+}
+
+.todo-item span {
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.todo-item.done span {
+  text-decoration: line-through;
+  color: #6f7f90;
+}
+
+.delete {
+  background: rgba(182, 71, 71, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(182, 71, 71, 0.26);
+  min-width: 68px;
+}
+
+.delete:hover {
+  background: rgba(182, 71, 71, 0.16);
+  filter: none;
+}
+
+.reveal {
+  animation: reveal 320ms ease both;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

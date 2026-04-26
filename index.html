@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>updated ciphher to do list and notes (updated)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-layer"></div>
+  <main class="app-shell">
+    <header class="hero">
+      <h1>updated ciphher to do list and notes (updated)</h1>
+      <p>Capture ideas and keep your day moving with clarity.</p>
+    </header>
+
+    <section class="grid">
+      <article class="panel notes-panel">
+        <div class="panel-head">
+          <h2>Notes</h2>
+          <span id="notesCount" class="badge">0</span>
+        </div>
+        <form id="noteForm" class="composer" autocomplete="off">
+          <input id="noteTitle" type="text" maxlength="80" placeholder="Note title" required />
+          <textarea id="noteText" rows="4" maxlength="400" placeholder="Write your note..." required></textarea>
+          <button type="submit">Add Note</button>
+        </form>
+        <ul id="notesList" class="items"></ul>
+      </article>
+
+      <article class="panel todo-panel">
+        <div class="panel-head">
+          <h2>To do</h2>
+          <span id="todoCount" class="badge">0</span>
+        </div>
+        <form id="todoForm" class="composer" autocomplete="off">
+          <input id="todoInput" type="text" maxlength="120" placeholder="Add a task" required />
+          <button type="submit">Add Task</button>
+        </form>
+        <ul id="todoList" class="items"></ul>
+      </article>
+    </section>
+  </main>
+
+  <template id="noteTemplate">
+    <li class="item note-item reveal">
+      <div>
+        <h3></h3>
+        <p></p>
+      </div>
+      <button class="delete" type="button" aria-label="Delete note">Delete</button>
+    </li>
+  </template>
+
+  <template id="todoTemplate">
+    <li class="item todo-item reveal">
+      <label>
+        <input type="checkbox" />
+        <span></span>
+      </label>
+      <button class="delete" type="button" aria-label="Delete task">Delete</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
