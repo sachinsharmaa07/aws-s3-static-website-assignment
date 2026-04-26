@@ -7,6 +7,14 @@
 
 ---
 
+## 👨‍💻 Author
+
+- **Name:** Sachin Kumar
+- **Registration Number:** 12316496
+- **Email:** studentgroup479@gmail.com
+
+---
+
 ## 📌 Project Overview
 
 This project demonstrates end-to-end implementation of **Amazon S3 static website hosting** as part of an AWS assignment. It covers:
@@ -90,13 +98,6 @@ Through this project, I learned:
 - How enabling versioning protects files and tracks object changes
 - How lifecycle rules help optimize long-term cloud storage costs
 - How to troubleshoot common deployment and permission-related issues in AWS
-
----
-
-## 👨‍💻 Author
-
-- **Name:** Sachin Kumar
-- **Registration Number:** 12316496
 
 ---
 
